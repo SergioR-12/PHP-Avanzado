@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Formulario de ejemplo</h1>
+
+    <form method="POST" action="procesar.php">
+        <div>
+            <label for="nombre">Nombre: </label>
+            <input type="text" name="nombre-completo">
+        </div>
+        <br>
+        <div>
+            <label for="telefono">Telefono: </label>
+            <input type="number" name="telefono-principal">
+        </div>
+        <div>
+            <h2>Intereses:</h2>
+            <label>HTML5: </label>
+            <input type="checkbox" name="intereses[]" value="1"><br>
+            <label>C++: </label>
+            <input type="checkbox" name="intereses[]" value="2"><br>
+            <label>Java: </label>
+            <input type="checkbox" name="intereses[]" value="3"><br>
+            <label>Python: </label>
+            <input type="checkbox" name="intereses[]" value="4"><br>
+        </div>
+        <div>
+            <h2>Región:</h2>
+            <label>Area Metropolitana</label>
+            <input type="radio" name="region" value="1"><br>
+            <label>Zona Norte</label>
+            <input type="radio" name="region" value="2"><br>
+            <label>Zona Sur</label>
+            <input type="radio" name="region" value="3"><br>
+        </div>
+        <br><br>     
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</body>
+</html>
