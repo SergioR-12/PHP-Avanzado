@@ -8,6 +8,9 @@ spl_autoload_register(function($clase) {
 
 $conexion = new Conexion();
 
+// Crear la base de datos
+
+
 // Insertar datos en la tabla productos de la base de datos
 
 $conexion->insertarProductos('bola futbol', 'balon de futbol', 'bola_futbol.png', 5000);

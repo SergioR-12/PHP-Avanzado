@@ -8,19 +8,6 @@
 
         private function conectarBD() {
             try {
-                $conexion = new mysqli('localhost', 'root', '', 'tienda');
-                if ($conexion->connect_error != null) {
-                    throw new Exception("Ocurrio un error al conectar a la base de datos:  {$conexion->connect_error}");
-                }
-            } catch (Exception $e) {
-                error_log($e->getMessage());
-                echo "Ocurrio un error al conectar a la base de datos";
-            }
-            return $conexion;
-        }
-
-        function crearBD () {
-            try {
                 $conexion = new mysqli('localhost', 'root', '');
                 if ($conexion->connect_error != null) {
                     throw new Exception("Ocurrio un error al conectar a la base de datos:  {$conexion->connect_error}");
@@ -32,6 +19,18 @@
                 echo "Ocurrio un error al crear la base de datos";
             } finally {
                 $conexion->close();
+            }
+            
+            try {
+                $conexion = new mysqli('localhost', 'root', '', 'tienda');
+                if ($conexion->connect_error != null) {
+                    throw new Exception("Ocurrio un error al conectar a la base de datos:  {$conexion->connect_error}");
+                }
+            } catch (Exception $e) {
+                error_log($e->getMessage());
+                echo "Ocurrio un error al conectar a la base de datos";
+            }
+            return $conexion;
         }
 
         function crearTablaProductos() {
