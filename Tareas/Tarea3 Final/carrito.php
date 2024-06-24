@@ -23,7 +23,7 @@
         foreach ($_SESSION['carrito'] as $indice => $carrito) {
             if ($carrito['nombre'] == $nombre) {
                 $_SESSION['carrito'][$indice]['cantidad']++;
-                header('Location: home.php');
+                header('Location: index.php');
                 exit;
             }
         }
@@ -32,7 +32,7 @@
         $_SESSION['carrito'][] = $producto;
 
         // Seguir en la misma página de inicio
-        header('Location: home.php');
+        header('Location: index.php');
         exit;
     }
 
@@ -47,7 +47,7 @@
     // borrar el carrito
     if (isset($_POST['vaciar'])) {
         $_SESSION['carrito'] = [];
-        header('Location: home.php');
+        header('Location: index.php');
         exit;
     }
 
@@ -100,7 +100,7 @@
             . <br>
             . <h1 style='font-weight: bold; font-size: 2.5rem; text-align: center; color: green; background-color: white; text-shadow: none'>Gracias por su compra</h1>
             . <br><br>";
-            echo "<button class='boton' onclick='location.href=\"home.php\"' style='display: block;margin: 10px auto;'><a>Volver a inicio</a></button>
+            echo "<button class='boton' onclick='location.href=\"index.php\"' style='display: block;margin: 10px auto;'><a>Volver a inicio</a></button>
             . </div>";
 
             // borra el carrito dado que el usuario finalizó la compra
@@ -155,7 +155,7 @@
         <!-- mostrar botones para seguir comprando, finalizar la compra o vaciar carrito -->
 
         <div class="botones">
-            <button class="boton2" onclick="location.href='home.php'" style ="flex:none">Seguir comprando</button>
+            <button class="boton2" onclick="location.href='index.php'" style ="flex:none">Seguir comprando</button>
             <form method="post" style="display: flex; justify-content: space-between;">
                 <button type="submit" name="vaciar" class="boton" style ="flex:none">Vaciar carrito</button>
             </form>

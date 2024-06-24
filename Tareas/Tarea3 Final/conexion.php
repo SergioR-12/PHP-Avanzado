@@ -19,6 +19,20 @@
             return $conexion;
         }
 
+        function crearBD () {
+            try {
+                $conexion = new mysqli('localhost', 'root', '');
+                if ($conexion->connect_error != null) {
+                    throw new Exception("Ocurrio un error al conectar a la base de datos:  {$conexion->connect_error}");
+                } else {
+                    $conexion->query("CREATE DATABASE IF NOT EXISTS tienda");
+                }
+            } catch (Exception $e) {
+                error_log($e->getMessage());
+                echo "Ocurrio un error al crear la base de datos";
+            } finally {
+                $conexion->close();
+        }
 
         function crearTablaProductos() {
             try {

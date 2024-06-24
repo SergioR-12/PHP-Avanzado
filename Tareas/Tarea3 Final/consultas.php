@@ -54,7 +54,7 @@
 
         </form>
 
-        <button class="boton2" onclick="location.href='home.php'" style="display: block;margin: 10px auto;"><a>Volver a inicio</a></button>
+        <button class="boton2" onclick="location.href='index.php'" style="display: block;margin: 10px auto;"><a>Volver a inicio</a></button>
 
     </div>
 
